@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: hong-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: ums
+          uri: lb://ums-service
+          predicates:
+            - Path=/user/**
+server:
+  port: 8080
